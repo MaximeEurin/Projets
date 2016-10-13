@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<title> Accueil, liste des utilisateurs</title>
+</h:head>
+
+<h:body>
+
+<h:form>
+<p:breadCrumb>
+    <p:menuitem value="Accueil" url="#" />
+    <p:menuitem value="Ajouter un Utilisateur" url="/ajouter.xhtml" />
+    <p:menuitem value="Modifier un Utilisateur" url="/modifier.xhtml" />
+    <p:menuitem value="Supprimer un Utilisateur" url="/supprimer.xhtml" />
+    <p:menuitem value="Deconnexion" url="/login.xhtml" />
+</p:breadCrumb>
+</h:form>
+
+
+<p:dataTable var="user" value="#{userMB.listeUsers}">
+    <p:column headerText="Id">
+        <h:outputText value="#{user.id_user}" />
+    </p:column>
+ 
+    <p:column headerText="Nom">
+        <h:outputText value="#{user.nom}" />
+    </p:column>
+ 
+    <p:column headerText="Date">
+        <h:outputText value="#{user.date}" />
+    </p:column>
+    
+</p:dataTable>
+
+
+</h:body>
+</html>

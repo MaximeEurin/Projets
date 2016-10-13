@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<title> Page d'identification </title>
+</h:head>
+
+<h:body>
+
+<h1>Page d'identification</h1>
+
+<h:form>
+    <p:panel id="panel" header="Identification">
+ 
+        <p:messages id="msgs" />
+ 
+        <h:panelGrid columns="2" cellpadding="5">
+            <p:outputLabel for="mail" value="Mail:" />
+            <p:inputText id="mail" value="#{agentMB.mail}" required="true" label="Mail">
+            </p:inputText>
+ 
+            <p:outputLabel for="mdp" value="Mdp:" />
+            <p:inputText id="mdp" value="#{agentMB.mdp}" label="Mdp" required="true">
+            </p:inputText>
+ 
+        </h:panelGrid>
+ 
+        <p:commandButton value="Se connecter" update="panel" action="#{agentMB.isExist()}" icon="ui-icon-check" />
+        
+    </p:panel>
+</h:form>
+
+
+</h:body>
+</html>
